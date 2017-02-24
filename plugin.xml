@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-geniusscan"
+    version="1.0.0">
+    <name>Cordova Plugin for Genius Scan</name>
+    <description>Wrapper for Genius Scan SDK (Android & iOS)</description>
+    <license>MIT</license>
+    <keywords>Genius Scan Grizzy OpenCV</keywords>
+    <repo>https://github.com/WizdomLand/cordova-plugin-geniusscan.git</repo>
+    <issue>https://github.com/WizdomLand/cordova-plugin-geniusscan/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="GeniusScanCordovaPlugin" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="GeniusScanCordovaPlugin">
+          <param name="android-package" value="com.wizdom.GeniusScanCordovaPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/wizdom/GeniusScanCordovaPlugin.java" target-dir="src/com/wizdom/" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="GeniusScanCordovaPlugin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="GeniusScanCordovaPlugin">
+                <param name="ios-package" value="GeniusScanCordovaPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/GeniusScanCordovaPlugin.h" />
+        <source-file src="src/ios/GeniusScanCordovaPlugin.m" />
+    </platform>
+</plugin>

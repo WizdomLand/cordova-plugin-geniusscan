@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-geniusscan",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-geniusscan",
+    "platforms": [
+      "android",
+      "ios",
+    ]
+  },
+  "description": "Cordova Plugin for Genius Scan SDK"
+}
